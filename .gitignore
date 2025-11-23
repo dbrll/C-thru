@@ -1,0 +1,4 @@
+.*
+assets/
+c-thru/mlp.so
+!/.gitignore
