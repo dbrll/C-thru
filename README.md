@@ -28,7 +28,6 @@ implementation.
 
 C-thru only requires :
 
-- Python with NumPy and Matplotlib
 - Python with NumPy, Matplotlib and cffi (to call the C engine)
 - a C compiler (gcc, clang)
 
