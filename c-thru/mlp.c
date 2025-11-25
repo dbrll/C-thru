@@ -1,6 +1,28 @@
 // Build with: gcc -shared -fPIC -O3 -o mlp.so mlp.c -lm
 
-// That all we'll need!
+/*
+This code implements a simple Multi-Layer Perceptron (MLP), a basic type of
+artificial neural network, in C. The network consists of an input layer, a
+hidden layer, and an output layer.
+
+The MLP is designed to classify input data (images in this example) into one
+of 10 possible categories.
+
+The main components of the program include:
+
+- The forward pass: which predicts the output value for a given image
+
+- The backward pass: which adjusts the network's weights to reduce
+prediction error
+
+- The training loop: which iterates over multiple examples to progressively
+improve the model's accuracy
+
+Despite being written in C, the inner loops are not vectorized for
+readability, so this implementation is actually slower than the NumPy-based
+one.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -19,10 +41,10 @@
 #define OUTPUT 10
 
 // Weight matrices and bias vectors
-double W1[INPUT][HIDDEN];    // Input → Hidden
+double W1[INPUT][HIDDEN];    // Input layer → Hidden layer
 double b1[HIDDEN];           // Hidden layer biases
 
-double W2[HIDDEN][OUTPUT];   // Hidden → Output
+double W2[HIDDEN][OUTPUT];   // Hidden layer → Output layer
 double b2[OUTPUT];           // Output layer biases
 
 // Initialize weights with small random values
