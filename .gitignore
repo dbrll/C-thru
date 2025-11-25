@@ -1,4 +1,8 @@
 .*
 assets/
 c-thru/mlp.so
+c-thru/Wb.txt
+__pycache__/
+*.pyc
 !/.gitignore
+
